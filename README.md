@@ -4,11 +4,9 @@ A real-time healthcare inventory tracking system that uses **RFID, ESP32, Wi-Fi 
 
 The system is designed for hospital pharmacies, medical stores, and healthcare supply chains where maintaining accurate medicine stock information is important. RFID tags provide unique identification for medicine items, an RFID reader captures tag information, and an ESP32 microcontroller processes and transmits the data to a cloud platform. Inventory information can then be monitored remotely through a web-based/cloud dashboard.
 
-> **Note:** The current implementation focuses on RFID-based identification, ESP32 processing, Wi-Fi communication, and cloud monitoring. Predictive AI/ML functionality is not part of the implemented core system.
-
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 Traditional medicine inventory management often depends on manual records or barcode-based scanning. These approaches can require significant manual effort and may make it difficult to maintain up-to-date stock information.
 
@@ -27,7 +25,7 @@ The project report describes the system as an automated solution for healthcare 
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 - Automate medicine identification using RFID technology.
 - Track medicine movement within the inventory system.
@@ -40,30 +38,11 @@ The project report describes the system as an automated solution for healthcare 
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 The system follows this general data flow:
 
-```text
-RFID-Tagged Medicine
-        │
-        ▼
-   RFID Reader
-        │
-        ▼
-      ESP32
-        │
-      Wi-Fi
-        │
-        ▼
-   Cloud Platform
-        │
-        ▼
- Inventory Database
-        │
-        ▼
- Web / Cloud Dashboard
-```
+<img width="590" height="436" alt="{1FB8339D-A941-409A-82B6-A768D592EEF7}" src="https://github.com/user-attachments/assets/fbcd6695-54ad-467b-83a8-30f9797ed394" />
 
 A 16×2 LCD is also connected to the ESP32 to provide local status information such as RFID detection and data transmission status.
 
@@ -71,7 +50,7 @@ The project report's block diagram illustrates the RFID reader feeding data to t
 
 ---
 
-## 🔄 How It Works
+## How It Works
 
 1. An RFID tag is attached to a medicine package.
 2. The RFID reader detects the tag.
@@ -86,7 +65,7 @@ The project report's block diagram illustrates the RFID reader feeding data to t
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 ### RFID-Based Identification
 Each medicine item can be associated with a unique RFID identifier, allowing automated identification without manual data entry.
@@ -114,7 +93,7 @@ A 16×2 LCD provides immediate feedback about RFID detection and system status.
 
 ---
 
-## 🧰 Technologies Used
+## Technologies Used
 
 ### Hardware
 
@@ -140,80 +119,9 @@ A 16×2 LCD provides immediate feedback about RFID detection and system status.
 
 ---
 
-## 🔌 Hardware Setup
 
-The core hardware setup consists of:
 
-```text
-          ┌──────────────────┐
-          │   RFID Tag       │
-          │ Medicine Package │
-          └────────┬─────────┘
-                   │
-                   ▼
-          ┌──────────────────┐
-          │   EM-18 RFID     │
-          │     Reader       │
-          └────────┬─────────┘
-                   │
-                   ▼
-          ┌──────────────────┐
-          │      ESP32       │
-          │  Main Controller │
-          └───────┬───┬──────┘
-                  │   │
-             Wi-Fi│   │LCD
-                  │   │
-                  ▼   ▼
-          ┌──────────┐ ┌─────────┐
-          │  Cloud   │ │ 16×2 LCD│
-          │ Platform │ │ Display │
-          └────┬─────┘ └─────────┘
-               │
-               ▼
-        ┌────────────────┐
-        │ Inventory      │
-        │ Dashboard      │
-        └────────────────┘
-```
-
-The physical prototype shown in the project report contains the ESP32, EM-18 RFID reader, LCD, and supporting circuitry.
-
----
-
-## 💻 Software Workflow
-
-The ESP32 program is responsible for the device-side workflow:
-
-```text
-Initialize ESP32
-      ↓
-Initialize RFID Reader
-      ↓
-Initialize LCD
-      ↓
-Connect to Wi-Fi
-      ↓
-Wait for RFID Tag
-      ↓
-Read Tag ID
-      ↓
-Process Tag Information
-      ↓
-Display Status on LCD
-      ↓
-Send Data to Cloud
-      ↓
-Update Inventory
-      ↓
-Wait for Next Scan
-```
-
-The project report also includes a Blynk-based ESP32 example for Wi-Fi/cloud communication and dashboard monitoring.
-
----
-
-## 📊 Dashboard
+##  Dashboard
 
 The cloud dashboard is used to monitor inventory activity remotely.
 
@@ -229,7 +137,7 @@ Example medicine records shown in the project report include medicines such as *
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -296,7 +204,7 @@ Place an RFID tag within the reader's detection range and verify:
 
 ---
 
-## 🔐 Security Note
+##  Security Note
 
 **Never upload real Wi-Fi passwords, cloud authentication tokens, API keys, or other credentials to GitHub.**
 
@@ -308,46 +216,9 @@ YOUR_WIFI_PASSWORD
 YOUR_AUTH_TOKEN
 ```
 
-If credentials have already been committed to a public repository, rotate/revoke them before making the repository public.
 
----
 
-## 📁 Suggested Repository Structure
-
-```text
-rfid-healthcare-inventory/
-│
-├── README.md
-│
-├── firmware/
-│   └── rfid_inventory.ino
-│
-├── dashboard/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
-├── backend/
-│   └── ...
-│
-├── database/
-│   └── schema.sql
-│
-├── docs/
-│   ├── architecture.png
-│   └── circuit-diagram.png
-│
-└── screenshots/
-    ├── dashboard.png
-    ├── alerts.png
-    └── inventory.png
-```
-
-Adjust the folder names to match the actual files in your repository.
-
----
-
-## 📈 Results
+##  Results
 
 The implemented system demonstrates automated medicine inventory monitoring.
 
@@ -357,7 +228,7 @@ The system is intended to reduce manual inventory work and provide more timely v
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 Possible extensions described in the project include:
 
@@ -377,7 +248,7 @@ A future research-oriented version could additionally investigate demand forecas
 
 ---
 
-## 📚 Research Context
+##  Research Context
 
 The project was developed around the application of RFID, IoT, and cloud technologies to healthcare inventory management.
 
@@ -394,34 +265,4 @@ Selected references from the project report include work on RFID in healthcare, 
 
 ---
 
-## 👩‍💻 Author
-
-**Nalagatla Sai Varshitha**
-
-Bachelor of Engineering  
-Computer Science and Engineering
-
----
-
-## ⭐ Project Highlights
-
-```text
-Healthcare Inventory Management
-        +
-RFID Automated Identification
-        +
-ESP32 + Wi-Fi Communication
-        +
-Cloud Monitoring
-        +
-Real-Time Dashboard
-        =
-Automated Medicine Inventory Tracking
-```
-
----
-
-## 📄 Project Documentation
-
-For a detailed explanation of the methodology, architecture, hardware, software components, implementation, results, and future enhancements, refer to the accompanying project report.
 
